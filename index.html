@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <title>Flowstone Web3</title>
+    <style type="text/css">
+        html {
+            position: relative;
+            overflow: hidden !important;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            padding:0;
+            margin:0;
+
+        }
+        .bg{
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            position: absolute;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .background{
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background-image: url("img/background.png");
+            position: absolute;
+            z-index: -5;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background-vague{
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background-image: url("img/background-vague.png");
+            position: absolute;
+            z-index: -4;
+        }
+        .sakura{
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background-image: url("img/sakura.png");
+            position: absolute;
+            z-index: -1;
+        }
+
+        @media screen and (max-width : 768px) {
+            .background {
+                background-size:cover;
+            }
+            .background2 {
+                background-size:cover;
+            }
+        } 
+        @media screen and (max-width : 1000px) {
+            .background {
+                background-size:130%;
+            }
+            .background2 {
+                background-size:130%;
+            }
+        } 
+        @media screen and (max-width : 2333333px) {
+            .background {
+                background-size:130%;
+            }
+            .background2 {
+                background-size:130%;
+            }
+        } 
+
+
+       
+        .logo1{
+
+            margin: auto;
+            margin-top: -100px;
+            width: 160px;
+            height: 160px;
+            /*background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px #ffffff;
+            */
+        }
+        .logo2{
+            width: 140px;
+            height: 140px;
+            margin: 5px 5px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
+            transition: all 1s;
+            /*box-shadow: 0px 0px 10px #ffffff;*/
+        }
+
+        /**.logo2:hover{
+            transform: rotate(360deg);
+            box-shadow: 0px 0px 50px rgba(255, 255, 255, 1);
+
+            transition: all 1s;
+            box-shadow: 0px 0px 10px #ffffff;
+        }*/
+
+        .name{
+            margin-top: 5px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0px 0px 12px white;
+            transition: all 0.5s;
+        }
+        .name:hover{
+            text-shadow: 0px 0px 30px white;
+
+            transition: all 0.5s;
+        }
+
+        .slogan{
+            margin: auto;
+            width: 600px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            /*border: 1px solid rgba(255, 255, 255, 0.8);*/
+            text-shadow: 0px 0px 12px #ffffff;
+            box-shadow: 0px 0px 12px #ffffff;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+        }
+        .slogan:hover{
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 0px 25px #ffffff;
+            transition: all 0.5s;
+        }
+
+        .slogan2{
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            font-size: 16px;
+            max-width: 500px;
+        }
+
+        .chat{
+            margin-top: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 500px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .girl{
+            position: fixed;
+            background-image: url("img/girl.texb");
+            width: 700px;
+            height: 700px;
+            left: -100px;
+            bottom: 0;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        .footer{
+            position: absolute;
+            
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0px;
+            color:rgba(255, 255, 255, 0.8);
+            font-size: 10px;
+        }
+
+        .footer2{
+            text-align: center;
+        }
+
+        a{
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="bg">
+        <div class="proflieCard">
+            <div class="logo1">
+                <img src="img/logo.png" alt="" class="logo2">
+            </div>
+            <p class="name">flowstone</p>
+            
+            <div class="slogan" id="slogan">
+                <p class="slogan2" id="slogan2">去中心化Web3站点！</p>
+                <!-- Bitcoin-->
+                <svg width="30" height="30" style="margin-right: 5;" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M23.641 14.9045C22.0381 21.3339 15.5262 25.2467 9.09606 23.6434C2.66863 22.0405 -1.24415 15.5282 0.359423 9.0994C1.96159 2.66933 8.47349 -1.24375 14.9016 0.359122C21.3313 1.96199 25.2438 8.475 23.6408 14.9047L23.6409 14.9045H23.641Z"
+                        fill="#F7931A"></path>
+                    <path
+                        d="M17.3089 10.2734C17.5478 8.67633 16.3319 7.81782 14.6692 7.2451L15.2086 5.08167L13.8916 4.75351L13.3665 6.85999C13.0203 6.77364 12.6648 6.69228 12.3114 6.61162L12.8403 4.49124L11.5241 4.16309L10.9845 6.32582C10.698 6.26059 10.4166 6.19612 10.1435 6.12819L10.1451 6.12138L8.32897 5.66787L7.97864 7.07446C7.97864 7.07446 8.95571 7.29843 8.93512 7.31221C9.46841 7.44532 9.56485 7.79834 9.54884 8.07816L8.93442 10.5428C8.97114 10.5521 9.01877 10.5656 9.07133 10.5868C9.02739 10.5758 8.98064 10.5639 8.93213 10.5523L8.07092 14.005C8.00574 14.167 7.84032 14.4101 7.46747 14.3178C7.48067 14.3369 6.51029 14.0789 6.51029 14.0789L5.85645 15.5864L7.57024 16.0137C7.88907 16.0936 8.2015 16.1773 8.50918 16.2559L7.96421 18.4442L9.27964 18.7723L9.81932 16.6073C10.1787 16.7049 10.5274 16.7948 10.8688 16.8797L10.331 19.0345L11.648 19.3626L12.1929 17.1785C14.4386 17.6035 16.1271 17.4321 16.8379 15.4009C17.4106 13.7656 16.8094 12.8223 15.6279 12.2072C16.4884 12.0087 17.1366 11.4427 17.3094 10.2736L17.309 10.2733L17.3089 10.2734ZM14.3 14.4927C13.893 16.1281 11.1396 15.2441 10.2469 15.0224L10.97 12.1233C11.8627 12.3462 14.7254 12.7872 14.3001 14.4927H14.3ZM14.7073 10.2497C14.336 11.7373 12.0443 10.9815 11.3009 10.7962L11.9565 8.16697C12.7 8.35228 15.0941 8.69815 14.7074 10.2497H14.7073Z"
+                        fill="white"></path>
+                </svg>
+                <!-- Ethereum-->
+                <svg width="30" height="30"  style="margin-right: 5;" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 0C18.627 0 24 5.373 24 12C24 18.627 18.627 24 12 24C5.373 24 0 18.627 0 12C0 5.373 5.373 0 12 0Z"
+                        fill="#5F80E9"></path>
+                    <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" fill="white"
+                        d="M12 21L6.75 13L12 16.429L17.25 13L12 21Z"></path>
+                    <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M12 21V16.429L17.25 13L12 21Z"></path>
+                    <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" fill="white"
+                        d="M12 3L17.25 12.143L12 15.57L6.75 12.142L12 3Z"></path>
+                    <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M12 3L17.25 12.143L12 15.57V9.57V3Z">
+                    </path>
+                    <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M12 3L17.25 12.143L12 9.57V3Z"></path>
+                    <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" fill="white"
+                        d="M17.25 12.1433L12 15.5703L6.75 12.1423L12 9.57031L17.25 12.1433Z"></path>
+                </svg>
+                <!-- Cardano-->
+                <svg width="30" height="30"  style="margin-right: 5;" focusable="false" aria-hidden="true"
+                    viewBox="0 0 32 32">
+                    <defs>
+                        <filter x="-7.5%" y="-6%" width="115.5%" height="117.2%" filterUnits="objectBoundingBox" id="a">
+                            <feOffset dy=".5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                            <feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.204257246 0" in="shadowBlurOuter1">
+                            </feColorMatrix>
+                        </filter>
+                        <path
+                            d="M15.725 6.06c.479-.247 1.064.324.81.795-.149.384-.71.486-.996.193-.303-.28-.204-.836.186-.989zm-5.155.546c.291-.118.66.144.63.457.03.338-.39.588-.687.427-.393-.15-.348-.778.057-.884zm10.558.893c-.455-.054-.527-.758-.09-.9.34-.162.652.143.702.46-.072.27-.302.518-.612.44zm-9.385 1.265c.487-.303 1.181.148 1.106.705-.025.561-.783.887-1.211.507-.414-.298-.351-.982.105-1.212zm7.43.322c.217-.55 1.097-.568 1.344-.032.245.417-.056.934-.491 1.076-.577.106-1.124-.508-.853-1.044zm-4.069 1.013c-.005-.474.433-.826.89-.859.304.06.634.187.764.488.243.416.027.987-.41 1.178-.2.11-.438.069-.656.056-.333-.16-.614-.477-.588-.863zm-7.666.69c.445-.27 1.045.22.876.696-.092.411-.654.578-.975.316-.343-.246-.289-.837.1-1.013zm16.462-.002c.377-.288 1 .043.954.511.026.427-.513.75-.887.53-.412-.183-.455-.807-.067-1.04zm-6.64.851c.622-.22 1.362.043 1.716.59.468.667.22 1.683-.507 2.066-.752.453-1.851.07-2.13-.758-.315-.74.145-1.666.92-1.898zm-3.653.073c.69-.32 1.619-.052 1.952.642.392.676.089 1.617-.612 1.966-.702.393-1.693.095-2.032-.63-.381-.702-.043-1.655.692-1.978zM9.95 12.94c.053-.437.472-.722.895-.752a.98.98 0 01.87.857c-.03.45-.383.888-.867.886-.533.045-1-.477-.898-.991zm10.802-.656c.547-.313 1.306.142 1.282.76.037.655-.803 1.116-1.347.732-.566-.32-.522-1.22.065-1.492zm-8.63 2.307c.638-.173 1.37.123 1.683.701.343.582.203 1.39-.33 1.818-.685.626-1.946.374-2.31-.48-.419-.783.09-1.833.956-2.04zm6.927-.003c.621-.175 1.351.06 1.685.617.442.637.231 1.588-.426 1.998-.69.477-1.756.227-2.136-.519-.46-.771.003-1.861.877-2.096zm-11.04.726c.552-.205 1.164.394.94.933-.136.49-.839.672-1.202.31-.425-.34-.268-1.095.262-1.243zm14.969.782a.836.836 0 01.788-.874c.378.06.746.36.716.765.035.535-.62.898-1.084.647-.217-.109-.328-.328-.42-.538zM5.294 15.58c.332-.143.743.14.667.503-.018.411-.635.57-.861.226-.2-.239-.08-.606.194-.73zm20.949-.009c.234-.163.61-.046.702.223.157.294-.131.696-.467.647-.472.042-.624-.665-.235-.87zm-12.317 1.973c.874-.223 1.814.494 1.82 1.38.056.895-.87 1.688-1.764 1.482-.692-.11-1.235-.766-1.212-1.453-.002-.658.502-1.27 1.156-1.409zm3.462-.001c.887-.244 1.855.486 1.841 1.392.047.878-.85 1.645-1.726 1.47-.825-.104-1.433-.995-1.203-1.783.116-.524.562-.95 1.088-1.08zm-6.676.545c.614-.103 1.19.57.941 1.144-.182.612-1.086.777-1.486.278-.468-.48-.118-1.356.545-1.422zm10.154.027c.548-.226 1.22.24 1.178.825.022.643-.808 1.087-1.343.711-.607-.337-.496-1.33.165-1.536zm2.838 2.8c-.214-.393.175-.914.62-.841.22-.004.375.167.516.311.029.233.078.511-.119.69-.267.333-.872.238-1.017-.16zm-16.268-.732c.415-.271 1.012.134.918.61-.05.423-.59.664-.945.424-.382-.217-.368-.836.027-1.034zm8.193.883c.543-.235 1.235.23 1.183.818.04.65-.815 1.1-1.346.71-.59-.335-.491-1.321.163-1.528zm-3.794.871c.462-.239 1.082.174 1.04.684.014.418-.4.774-.82.712-.347-.007-.573-.314-.685-.605.006-.317.139-.67.465-.79zm7.686.008c.476-.29 1.152.126 1.107.67.012.57-.752.934-1.195.56-.428-.293-.376-.997.088-1.23zm1.337 3.25c-.212-.314.037-.693.38-.765.277.055.57.26.511.574-.04.427-.674.557-.891.192zm-10.611-.273c.084-.25.288-.497.587-.432.435.03.564.676.183.875-.342.227-.74-.084-.77-.443zm5.12.287c.083-.37.568-.549.888-.353.212.09.274.322.328.52a8.822 8.822 0 00-.08.31c-.131.152-.3.305-.518.3-.405.047-.771-.404-.619-.777z"
+                            id="b"></path>
+                    </defs>
+                    <g fill="none">
+                        <circle cx="16" cy="16" r="16" fill="#0D1E30"></circle>
+                        <use fill="#000" filter="url(#a)" xlink:href="#b"></use>
+                        <use fill="#FFF" xlink:href="#b"></use>
+                    </g>
+                </svg>
+                <!-- Solana-->
+                <svg width="30" height="30"  style="margin-right: 5;" focusable="false" aria-hidden="true"
+                    viewBox="0 0 397.7 311.7">
+                    <path
+                        d="M64.6,237.9c2.4-2.4,5.7-3.8,9.2-3.8h317.4c5.8,0,8.7,7,4.6,11.1l-62.7,62.7c-2.4,2.4-5.7,3.8-9.2,3.8H6.5c-5.8,0-8.7-7-4.6-11.1L64.6,237.9z"
+                        fill="url(#solana-css-1ojkpm6-id-0)"></path>
+                    <path
+                        d="M64.6,3.8C67.1,1.4,70.4,0,73.8,0h317.4c5.8,0,8.7,7,4.6,11.1l-62.7,62.7c-2.4,2.4-5.7,3.8-9.2,3.8H6.5c-5.8,0-8.7-7-4.6-11.1L64.6,3.8z"
+                        fill="url(#solana-css-1ojkpm6-id-1)"></path>
+                    <path
+                        d="M333.1,120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8,0-8.7,7-4.6,11.1l62.7,62.7c2.4,2.4,5.7,3.8,9.2,3.8h317.4c5.8,0,8.7-7,4.6-11.1L333.1,120.1z"
+                        fill="url(#solana-css-1ojkpm6-id-2)"></path>
+                    <linearGradient id="solana-css-1ojkpm6-id-0" gradientUnits="userSpaceOnUse" x1="360.8791" y1="351.4553" x2="141.213"
+                        y2="-69.2936" gradientTransform="matrix(1 0 0 -1 0 314)">
+                        <stop offset="0" stop-color="#00FFA3"></stop>
+                        <stop offset="1" stop-color="#DC1FFF"></stop>
+                    </linearGradient>
+                    <linearGradient id="solana-css-1ojkpm6-id-1" gradientUnits="userSpaceOnUse" x1="264.8291" y1="401.6014" x2="45.163"
+                        y2="-19.1475" gradientTransform="matrix(1 0 0 -1 0 314)">
+                        <stop offset="0" stop-color="#00FFA3"></stop>
+                        <stop offset="1" stop-color="#DC1FFF"></stop>
+                    </linearGradient>
+                    <linearGradient id="solana-css-1ojkpm6-id-2" gradientUnits="userSpaceOnUse" x1="312.5484" y1="376.688" x2="92.8822"
+                        y2="-44.061" gradientTransform="matrix(1 0 0 -1 0 314)">
+                        <stop offset="0" stop-color="#00FFA3"></stop>
+                        <stop offset="1" stop-color="#DC1FFF"></stop>
+                    </linearGradient>
+                </svg>
+                <!-- Hedera-->
+                <svg width="30" height="30"  style="margin-right: 5;" focusable="false" aria-hidden="true"
+                    viewBox="0 0 2500 2500">
+                    <g>
+                        <path d="M1250,0C559.64,0,0,559.64,0,1250S559.64,2500,1250,2500s1250-559.64,1250-1250S1940.36,0,1250,0"></path>
+                        <path fill="#fff"
+                            d="M1758.12,1790.62H1599.38V1453.13H900.62v337.49H741.87V696.25H900.62v329.37h698.76V696.25h158.75Zm-850-463.75h698.75V1152.5H908.12Z">
+                        </path>
+                    </g>
+                </svg>
+                <!-- Polygon-->
+                <svg width="30" height="30"  focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12" fill="#8247E5"></circle>
+                    <path
+                        d="m15.4 14.86 3.32-2.16a.66.66 0 0 0 .28-.56V7.8c0-.23-.1-.44-.28-.56l-3.33-2.16a.52.52 0 0 0-.57 0L11.5 7.25a.66.66 0 0 0-.28.56v7.74l-2.33 1.51-2.33-1.51V12.5l2.33-1.52 1.54 1V9.96l-1.25-.82a.52.52 0 0 0-.57 0l-3.33 2.17a.66.66 0 0 0-.28.55v4.33c0 .23.1.44.28.56l3.33 2.16c.17.12.39.12.57 0l3.32-2.16a.67.67 0 0 0 .28-.56V8.46l.04-.03 2.29-1.5 2.33 1.53v3.03l-2.33 1.52-1.53-1v2.04l1.24.81c.18.11.4.11.57 0Z"
+                        fill="white"></path>
+                </svg>
+            </div>
+            <div class="chat">
+                <!-- Github-->
+                <a target="_blank" href="https://github.com/flowstone">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 48 48">
+                        <path fill="#fff" d="M41,24c0,9.4-7.6,17-17,17S7,33.4,7,24S14.6,7,24,7S41,14.6,41,24z"></path>
+                        <path fill="#455a64"
+                            d="M21 41v-5.5c0-.3.2-.5.5-.5s.5.2.5.5V41h2v-6.5c0-.3.2-.5.5-.5s.5.2.5.5V41h2v-5.5c0-.3.2-.5.5-.5s.5.2.5.5V41h1.8c.2-.3.2-.6.2-1.1V36c0-2.2-1.9-5.2-4.3-5.2h-2.5c-2.3 0-4.3 3.1-4.3 5.2v3.9c0 .4.1.8.2 1.1L21 41 21 41zM40.1 26.4C40.1 26.4 40.1 26.4 40.1 26.4c0 0-1.3-.4-2.4-.4 0 0-.1 0-.1 0-1.1 0-2.9.3-2.9.3-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.1.1 0 2-.3 3.1-.3 1.1 0 2.4.4 2.5.4.1 0 .1.1.1.2C40.2 26.3 40.2 26.4 40.1 26.4zM39.8 27.2C39.8 27.2 39.8 27.2 39.8 27.2c0 0-1.4-.4-2.6-.4-.9 0-3 .2-3.1.2-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.1.1 0 2.2-.2 3.1-.2 1.3 0 2.6.4 2.6.4.1 0 .1.1.1.2C39.9 27.1 39.9 27.2 39.8 27.2zM7.8 26.4c-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.2.8-.2 2.4-.5 3.3-.5.8 0 3.5.2 3.6.2.1 0 .1.1.1.1 0 .1-.1.1-.1.1 0 0-2.7-.2-3.5-.2C10.1 26 8.6 26.2 7.8 26.4 7.8 26.4 7.8 26.4 7.8 26.4zM8.2 27.9c0 0-.1 0-.1-.1 0-.1 0-.1 0-.2.1 0 1.4-.8 2.9-1 1.3-.2 4 .1 4.2.1.1 0 .1.1.1.1 0 .1-.1.1-.1.1 0 0 0 0 0 0 0 0-2.8-.3-4.1-.1C9.6 27.1 8.2 27.9 8.2 27.9 8.2 27.9 8.2 27.9 8.2 27.9z">
+                        </path>
+                        <path fill="#455a64"
+                            d="M14.2,23.5c0-4.4,4.6-8.5,10.3-8.5c5.7,0,10.3,4,10.3,8.5S31.5,31,24.5,31S14.2,27.9,14.2,23.5z"></path>
+                        <path fill="#455a64"
+                            d="M28.6 16.3c0 0 1.7-2.3 4.8-2.3 1.2 1.2.4 4.8 0 5.8L28.6 16.3zM20.4 16.3c0 0-1.7-2.3-4.8-2.3-1.2 1.2-.4 4.8 0 5.8L20.4 16.3zM20.1 35.9c0 0-2.3 0-2.8 0-1.2 0-2.3-.5-2.8-1.5-.6-1.1-1.1-2.3-2.6-3.3-.3-.2-.1-.4.4-.4.5.1 1.4.2 2.1 1.1.7.9 1.5 2 2.8 2 1.3 0 2.7 0 3.5-.9L20.1 35.9z">
+                        </path>
+                        <path fill="#00bcd4"
+                            d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z M24,40c-8.8,0-16-7.2-16-16S15.2,8,24,8 s16,7.2,16,16S32.8,40,24,40z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- 微博-->
+                <a target="_blank" href="https://weibo.com/u/1816649623">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 64 64">
+                        <ellipse cx="32" cy="61" opacity=".3" rx="20" ry="3"></ellipse>
+                        <path fill="#ffce29"
+                            d="M46.892,7.021c-1.353-0.07-2.717,0.031-4.051,0.321c-1.236,0.271-2.055,1.534-1.792,2.808	c0.263,1.273,1.489,2.116,2.727,1.845c3.807-0.832,7.955,0.351,10.749,3.53c2.785,3.189,3.534,7.581,2.337,11.392	c-0.39,1.244,0.272,2.567,1.48,2.969c1.197,0.401,2.492-0.29,2.882-1.524c1.675-5.365,0.662-11.482-3.271-15.964	C55.002,9.038,50.961,7.222,46.892,7.021z">
+                        </path>
+                        <path fill="#fd3c4f"
+                            d="M25.982,13.951c-4.162,0.453-9.973,3.74-15.134,8.977C5.23,28.636,2,34.71,2,39.936	C2,49.937,14.622,56,26.991,56C43.202,56,54,46.423,54,38.834c0-4.587-3.794-7.195-7.218-8.268	c-0.844-0.256-1.445-0.374-1.009-1.496c0.951-2.431,1.106-4.567,0.077-6.063c-1.93-2.805-7.285-2.658-13.349-0.079	c0,0-1.882,0.906-1.397-0.63c0.932-3.041,0.757-5.611-0.698-7.087C29.377,14.167,27.873,13.744,25.982,13.951z">
+                        </path>
+                        <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                            stroke-width="3" d="M13.343,25.383c2.262-2.296,4.559-4.082,6.662-5.377"></path>
+                        <path
+                            d="M52.346,34.136C50.402,34.822,49,36.655,49,38.834C49,42.963,41.231,51,26.991,51 c-2.649,0-4.796,2.067-4.967,4.673C23.664,55.887,25.329,56,26.991,56C43.202,56,54,46.423,54,38.834 C54,36.939,53.347,35.387,52.346,34.136z"
+                            opacity=".15"></path>
+                        <path fill="#fff"
+                            d="M14.409,26.438c4.726-4.795,9.49-7.23,12.114-7.516c1.988-0.216,3.563-1.577,4.174-3.35 c-0.095-0.122-0.182-0.251-0.291-0.361c-1.029-1.044-2.533-1.467-4.424-1.26c-4.162,0.453-9.973,3.74-15.134,8.977 C5.23,28.636,2,34.71,2,39.936c0,1.749,0.393,3.374,1.096,4.871C5.329,44.306,7,42.319,7,39.936 C7,36.142,9.702,31.221,14.409,26.438z"
+                            opacity=".3"></path>
+                        <path fill="#fff"
+                            d="M29.318,28.025c7.819,0.282,14.112,4.284,14.646,9.771c0.608,6.276-6.468,12.138-15.823,13.077	c-9.356,0.939-17.497-3.419-18.105-9.694s6.541-12.138,15.897-13.077C27.101,27.978,28.205,27.987,29.318,28.025z">
+                        </path>
+                        <path fill="#ffce29"
+                            d="M46.572,15.009c-0.666-0.031-1.304,0.021-1.96,0.162c-1.078,0.234-1.803,1.405-1.568,2.525	c0.235,1.11,1.283,1.791,2.352,1.547c1.283-0.285,2.745,0.143,3.685,1.221c0.941,1.079,1.186,2.535,0.784,3.828	c-0.333,1.079,0.216,2.25,1.254,2.606c1.039,0.346,2.176-0.224,2.509-1.303c0.823-2.647,0.284-5.68-1.647-7.9	C50.542,16.037,48.572,15.1,46.572,15.009z">
+                        </path>
+                        <path fill="#9c34c2"
+                            d="M24.822,33.039c-3.78,0.309-7.333,2.186-8.956,5.006c-2.198,3.834-0.093,8.126,4.93,9.518	C26.003,49,32.135,46.77,34.271,42.628c2.105-4.046-0.524-8.17-5.669-9.307C27.36,33.048,26.086,32.933,24.822,33.039z">
+                        </path>
+                        <path fill="#fff"
+                            d="M28.263,36c0.251,0,0.392,0.035,0.628,0.138c0.974,0.394,1.412,1.562,0.879,2.608	c-0.566,1.046-1.788,1.527-2.762,1.098c-0.958-0.429-1.287-1.579-0.754-2.608C26.679,36.462,27.51,36.016,28.263,36z">
+                        </path>
+                        <path fill="#fff"
+                            d="M22.403,39c0.386,0.01,0.798,0.068,1.148,0.232c1.426,0.657,1.875,2.417,1.005,3.944	c-0.879,1.517-2.736,2.243-4.162,1.547c-1.4-0.686-1.812-2.465-0.933-3.944C20.116,39.677,21.255,38.981,22.403,39z">
+                        </path>
+                    </svg>
+                </a>    
+                <!-- 博客-->
+                <a target="_blank" href="http://www.xueyao.me/">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 48 48">
+                        <path fill="#ff6f00"
+                            d="M37,42H11c-2.761,0-5-2.239-5-5V11c0-2.761,2.239-5,5-5h26c2.761,0,5,2.239,5,5v26 C42,39.761,39.761,42,37,42z">
+                        </path>
+                        <path fill="#fff"
+                            d="M33.5,22h-1c-0.828,0-1.5-0.672-1.5-1.5V20c0-3.866-3.134-7-7-7h-4c-3.866,0-7,3.134-7,7v8 c0,3.866,3.134,7,7,7h8c3.866,0,7-3.134,7-7v-4.5C35,22.672,34.328,22,33.5,22z M20,19h5c0.553,0,1,0.448,1,1s-0.447,1-1,1h-5 c-0.553,0-1-0.448-1-1S19.447,19,20,19z M28,29h-8c-0.553,0-1-0.448-1-1s0.447-1,1-1h8c0.553,0,1,0.448,1,1S28.553,29,28,29z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- 邮箱-->
+                <a target="_blank" href="mailto:xueyao.me@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 48 48">
+                        <path fill="#e0e0e0"
+                            d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z">
+                        </path>
+                        <path fill="#d9d9d9"
+                            d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z">
+                        </path>
+                        <path fill="#eee" d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z"></path>
+                        <path fill="#e0e0e0" d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z"></path>
+                        <path fill="#ca3737"
+                            d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z">
+                        </path>
+                        <path fill="#f5f5f5"
+                            d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z">
+                        </path>
+                        <path fill="#e84f4b"
+                            d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z">
+                        </path>
+                    </svg>
+                </a>    
+            </div>
+
+            <footer class="footer">
+                <p class="footer2">Openned in <a target="_blank" href="https://nft.storage">NFT.STORAGE</a></p>
+                <p class="footer2">&copy2024 <a target="_blank" href="ipfs://931330220.x">931330220.x</a> &nbsp 素材来源 <a target="_blank" href="https://funny233.xyz">高坂滑稽果</a> &nbsp 作者 <a target="_blank" href="https://www.xueyao.me">flowstone</a></p>
+            </footer>
+
+        </div>
+
+        
+    </div>
+    
+    
+
+    <img src="img/girl.texb" class="girl" id="girl" alt="">
+    <div class="background" id="background"></div>
+    <div class="sakura" id="sakura"></div>
+    <div class="background-vague" id="background-vague"></div>
+
+    <script>
+        function load2D_bg() {
+                var background = document.getElementById("background");
+                var range = 40;
+                var calcValue = function calcValue(a, b) {
+                    return (a / b * range - range / 2).toFixed(1);
+                };
+                var timeout = void 0;
+                document.addEventListener('mousemove',
+                    function (_ref) {
+                        var x = _ref.x,
+                            y = _ref.y;
+                        if (timeout) {
+                            window.cancelAnimationFrame(timeout);
+                        }
+                        timeout = window.requestAnimationFrame(function () {
+                            var yValue = calcValue(y, window.innerHeight);
+                            var xValue = calcValue(x, window.innerWidth);
+
+
+                            background.style.backgroundPositionX = xValue * 1 - 200 + "px ";
+                            background.style.backgroundPositionY = (-yValue * 0.75 - 50) + "px";
+                        })
+                    }, false);
+
+            }
+
+            function load2D_bg_vague() {
+                var background = document.getElementById("background-vague");
+                var range = 40;
+                var calcValue = function calcValue(a, b) {
+                    return (a / b * range - range / 2).toFixed(1);
+                };
+                var timeout = void 0;
+                document.addEventListener('mousemove',
+                    function (_ref) {
+                        var x = _ref.x,
+                            y = _ref.y;
+                        if (timeout) {
+                            window.cancelAnimationFrame(timeout);
+                        }
+                        timeout = window.requestAnimationFrame(function () {
+                            var yValue = calcValue(y, window.innerHeight);
+                            var xValue = calcValue(x, window.innerWidth);
+
+                            background.style.backgroundPositionX = xValue * 1 - 200 + "px ";
+                            background.style.backgroundPositionY = (-yValue * 0.75 - 50) + "px";
+                        })
+                    }, false);
+
+            }
+
+            function load2D_bg_vague_2() {
+                var background = document.getElementById("background-vague");
+                document.onmousemove = function () {
+                    console.log(window.outerHeight);
+                    background.style.opacity = 1 - (getMousePos() / window.outerHeight * 2.5);
+                }
+            }
+            // 鼠标坐标
+            function getMousePos(event) {
+                var e = event || window.event;
+                var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+                var y = e.pageY || e.clientY + scrollY;
+                return y;
+            }
+
+            function load2D_girl() {
+                var background = document.getElementById("girl");
+                var range = 40;
+                var calcValue = function calcValue(a, b) {
+                    return (a / b * range - range / 2).toFixed(1);
+                };
+                var timeout = void 0;
+                document.addEventListener('mousemove',
+                    function (_ref) {
+                        var x = _ref.x,
+                            y = _ref.y;
+                        if (timeout) {
+                            window.cancelAnimationFrame(timeout);
+                        }
+                        timeout = window.requestAnimationFrame(function () {
+                            var xValue = calcValue(x, window.innerWidth);
+
+                            background.style.left = xValue * 0.7 - 100 + "px";
+
+                        })
+                    }, false);
+
+            }
+
+            function load2D_sakura() {
+                var background = document.getElementById("sakura");
+                var range = 40;
+                var calcValue = function calcValue(a, b) {
+                    return (a / b * range - range / 2).toFixed(1);
+                };
+                var timeout = void 0;
+                document.addEventListener('mousemove',
+                    function (_ref) {
+                        var x = _ref.x,
+                            y = _ref.y;
+                        if (timeout) {
+                            window.cancelAnimationFrame(timeout);
+                        }
+                        timeout = window.requestAnimationFrame(function () {
+                            var yValue = calcValue(y, window.innerHeight);
+                            var xValue = calcValue(x, window.innerWidth);
+                            background.style.backgroundPositionX = xValue * 1.5 - 200 + "px ";
+                            background.style.backgroundPositionY = (-yValue * 1 - 50) + "px";
+                        })
+                    }, false);
+
+            }
+            
+            
+        window.onload=load2D_bg();
+        window.onload=load2D_bg_vague();
+        window.onload=load2D_bg_vague_2();
+        window.onload=load2D_girl();
+        window.onload=load2D_sakura();
+        
+        
+    </script>
+    <a class="github-fork-ribbon" href="https://github.com/flowstone/931330220.x" data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub">Fork me on GitHub</a>
+</body>
+</html>
